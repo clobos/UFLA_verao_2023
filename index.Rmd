@@ -2,7 +2,7 @@
 title: "Um breve tutorial sobre dplyr com ggplot2"
 author:
   - name: "Cristian Villegas (clobos@usp.br)"
-    url: https://github.com/clobos/UFLA_verao_2023/
+    url: https://github.com/clobos/
     affiliation: Universidade de São Paulo, Escola Superior de Agricultura "Luiz de Queiroz"
     affiliation_url: http://www.lce.esalq.usp.br/equipe/docentes
 date: "10/03/2023"
@@ -14,16 +14,13 @@ bibliography: [book.bib, packages.bib]
 description: |
   Dizer alguma coisa
 link-citations: yes
-github-repo: clobos/ufla_verao_2023
+github-repo: clobos/UFLA_verao_2023/
 ---
 
-```{r setup, include=FALSE}
+```{r, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, 
                       message = FALSE,
-                      warning = FALSE,
-                      cache = TRUE,
-                      out.width = "5in", 
-                      out.height = "3in")
+                      warning = FALSE)
 ```
 
 
@@ -96,7 +93,7 @@ dados <- mpg
 glimpse(dados)
 ```
 
-## Progapanda 1 (Gustavo Jun Yakushiji)
+## Propaganda 1 (Gustavo Jun Yakushiji)
 
 Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no youtube
 

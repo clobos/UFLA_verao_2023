@@ -22,8 +22,16 @@ ggplot(dados)
 
 ggplot(dados, aes(x = cty, y = hwy))
 
+# Alternativas
 ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point()
+
+ggplot(dados) + 
+  geom_point(aes(x = cty, y = hwy))
+
+ggplot() + 
+  geom_point(data = dados, aes(x = cty, y = hwy))
+# Fim 
 
 ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(colour = "red")
@@ -42,7 +50,29 @@ ggplot(dados, aes(x = cty, y = hwy)) +
        subtitle = "Escrever alguma coisa")
 ```
 
-## color, shape, fill, alpha
+### Mais detalhes sobre geom_point {-}
+
+> geom_point() understands the following aesthetics (required aesthetics are in bold):
+
+  - x
+
+  - y
+
+  - alpha
+
+  - colour
+
+  - fill
+
+  - group
+
+  - shape
+
+  - size
+
+  - stroke
+  
+## colour, shape, fill, alpha
 
 ```{r}
 ggplot(dados, aes(x = cty, y = hwy)) + 
@@ -52,9 +82,28 @@ ggplot(dados, aes(x = cty, y = hwy, col = factor(year))) +
   geom_point() + 
   labs(col = "year")
 
-ggplot(dados, aes(x = cty, y = hwy, col = factor(year))) + 
-  geom_point(col = "blue") + 
+ggplot(dados, aes(x = cty, y = hwy, alpha = factor(year))) + 
+  geom_point() + 
+  labs(alpha = "year")
+
+ggplot(dados, aes(x = cty, y = hwy, size = factor(year))) + 
+  geom_point() + 
+  labs(size = "year")
+
+# Alternativa
+ggplot(dados, aes(x = cty, y = hwy, col = cty < 20)) + 
+  geom_point() + 
   labs(col = "year")
+
+# Erro comum
+ggplot(dados, aes(x = cty, y = hwy, col = "red")) + 
+  geom_point()+
+  labs(col = "year")
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(col = "red")+
+  labs(col = "year")
+# Fim  Erro comum
 
 ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
   geom_col(position = "dodge") + 
@@ -83,12 +132,6 @@ ggplot(dados, aes(x = cty, y = hwy, size = factor(class), col = factor(class))) 
 ```{r}
 glimpse(dados)
 
-ggplot(dados, aes(x = cty)) + 
-  geom_histogram(aes(y = after_stat(density)),
-                 bins = 10, fill = "yellow", col = "red") +
-  geom_density(col = "blue", lwd =3)
-
-
 v1 <- ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(col = "blue")
 v1
@@ -108,6 +151,12 @@ v3
 v4 <- ggplot(dados, aes(x = cty)) + 
   geom_histogram(bins = 10, fill = "red", col = "blue", lwd=2)
 v4
+
+# Alternativas
+ggplot(dados, aes(x = cty)) + 
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 10, fill = "yellow", col = "red") +
+  geom_density(col = "blue", lwd =3)
 ```
 
 ## gridExtra e patchwork
