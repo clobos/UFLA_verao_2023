@@ -15,7 +15,7 @@ Alguns links
 ls("package:ggplot2")
 ```
 
-## Primeiros passos
+## Primeiros passos usando geom_point
 
 ```{r}
 ggplot(dados)
@@ -50,7 +50,7 @@ ggplot(dados, aes(x = cty, y = hwy)) +
        subtitle = "Escrever alguma coisa")
 ```
 
-### Mais detalhes sobre geom_point {-}
+### Mais detalhes sobre geom_point 
 
 > geom_point() understands the following aesthetics (required aesthetics are in bold):
 
@@ -72,8 +72,6 @@ ggplot(dados, aes(x = cty, y = hwy)) +
 
   - stroke
   
-## colour, shape, fill, alpha
-
 ```{r}
 ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point()
@@ -126,37 +124,33 @@ ggplot(dados, aes(x = cty, y = hwy, size = factor(class), col = factor(class))) 
 
 ```
 
-## point, smooth, boxplot, histogram
+## smooth, boxplot, histogram
 
 
 ```{r}
 glimpse(dados)
 
-v1 <- ggplot(dados, aes(x = cty, y = hwy)) + 
-  geom_point(col = "blue")
-v1
-
-v2 <- ggplot(dados, aes(x = cty, y = hwy)) + 
+v1<- ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(col = "blue")+
   geom_smooth(method = mgcv::gam,
               formula = y ~ s(x, bs = "cs") ,
               col = "red", 
               se = FALSE)
+v1
+
+v2 <- ggplot(dados, aes(x = cty)) + 
+  geom_boxplot(fill = "red")
 v2
 
 v3 <- ggplot(dados, aes(x = cty)) + 
-  geom_boxplot(fill = "red")
+  geom_histogram(bins = 10, fill = "red", col = "blue", lwd=2)
 v3
 
-v4 <- ggplot(dados, aes(x = cty)) + 
-  geom_histogram(bins = 10, fill = "red", col = "blue", lwd=2)
-v4
-
-# Alternativas
-ggplot(dados, aes(x = cty)) + 
+v4<- ggplot(dados, aes(x = cty)) + 
   geom_histogram(aes(y = after_stat(density)),
                  bins = 10, fill = "yellow", col = "red") +
   geom_density(col = "blue", lwd =3)
+v4
 ```
 
 ## gridExtra e patchwork
@@ -204,13 +198,25 @@ v6 <- ggplot(dados , aes(x = manufacturer, y = cty)) +
   theme(axis.text.x = element_text(angle = 45))
 v6
 
+dados %>% 
+  select(manufacturer, cty) %>% 
+  group_by(manufacturer) %>% 
+  summarise(soma_total_cty = sum(cty),
+            n = n())
+
+# dados %>% 
+#   filter(manufacturer == "audi") %>% 
+#   select(cty) %>% 
+#   sum()
 v7 <- ggplot(dados , aes(x = cty)) + 
   geom_density()
 v7
 
 v8 <- ggplot(dados, aes(x = cty, y = hwy)) + 
-  geom_density2d()
+  geom_density2d()+
+  geom_point(colour = "red")
 v8
+
 
 (v5+v6)/ (v7 + v8)
 ```
@@ -244,6 +250,15 @@ ggplot(data.frame(x = c(a - 3*b, a + 3*b)), aes(x)) +
   theme_minimal()
 ```
 
+## stat_summary
+
+```{r}
+ggplot(dados, aes(x = manufacturer, y = hwy)) + 
+  geom_point(col = "red")+
+  stat_summary(fun = mean, col = "blue")+
+  theme(axis.text.x = element_text(angle = 45))
+```
+
 ## theme_
 
 ```{r}
@@ -274,6 +289,23 @@ ggplotly(v5)
 
 ## esquisse
 
+Alguns links de interesse
+
 [esquisse](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)
 
 [esquisse + shiny](https://cran.r-project.org/web/packages/esquisse/vignettes/shiny-usage.html)
+
+```{r, eval=FALSE}
+esquisser(dados)
+```
+
+## Exemplo esquisse
+```{r}
+ggplot(dados) +
+  aes(x = displ, y = cty, colour = class, size = cty) +
+  geom_point(shape = "circle") +
+  scale_color_hue(direction = 1) +
+  theme(legend.position = "top") +
+  facet_wrap(vars(drv))
+```
+
