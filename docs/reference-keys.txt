@@ -2,7 +2,7 @@ introdução
 alguns-atalhos-no-rstudio
 carrega-pacotes-a-serem-usados
 descrição-dos-dados-mpg
-progapanda-1-gustavo-jun-yakushiji
+propaganda-1-gustavo-jun-yakushiji
 propaganda-2-gustavo-jun-yakushiji
 dplyr-60-minutos
 operador-pipe
@@ -21,7 +21,7 @@ sample_n
 sample_frac
 ggplot2-60-minutos
 primeiros-passos
-color-shape-fill-alpha
+colour-shape-fill-alpha
 point-smooth-boxplot-histogram
 gridextra-e-patchwork
 bar-col-density-density2d
