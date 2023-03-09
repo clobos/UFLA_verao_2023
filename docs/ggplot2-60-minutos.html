@@ -162,19 +162,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html"><i class="fa fa-check"></i><b>3</b> ggplot2 (60 minutos)</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#primeiros-passos"><i class="fa fa-check"></i><b>3.1</b> Primeiros passos</a>
+<li class="chapter" data-level="3.1" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#primeiros-passos-usando-geom_point"><i class="fa fa-check"></i><b>3.1</b> Primeiros passos usando geom_point</a>
 <ul>
-<li class="chapter" data-level="" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#mais-detalhes-sobre-geom_point"><i class="fa fa-check"></i>Mais detalhes sobre geom_point</a></li>
+<li class="chapter" data-level="3.1.1" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#mais-detalhes-sobre-geom_point"><i class="fa fa-check"></i><b>3.1.1</b> Mais detalhes sobre geom_point</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#colour-shape-fill-alpha"><i class="fa fa-check"></i><b>3.2</b> colour, shape, fill, alpha</a></li>
-<li class="chapter" data-level="3.3" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#point-smooth-boxplot-histogram"><i class="fa fa-check"></i><b>3.3</b> point, smooth, boxplot, histogram</a></li>
-<li class="chapter" data-level="3.4" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#gridextra-e-patchwork"><i class="fa fa-check"></i><b>3.4</b> gridExtra e patchwork</a></li>
-<li class="chapter" data-level="3.5" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#bar-col-density-density2d"><i class="fa fa-check"></i><b>3.5</b> bar, col, density, density2d</a></li>
-<li class="chapter" data-level="3.6" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#facet_grid-facet_grid"><i class="fa fa-check"></i><b>3.6</b> facet_grid, facet_grid</a></li>
-<li class="chapter" data-level="3.7" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#stat_function"><i class="fa fa-check"></i><b>3.7</b> stat_function</a></li>
+<li class="chapter" data-level="3.2" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#smooth-boxplot-histogram"><i class="fa fa-check"></i><b>3.2</b> smooth, boxplot, histogram</a></li>
+<li class="chapter" data-level="3.3" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#gridextra-e-patchwork"><i class="fa fa-check"></i><b>3.3</b> gridExtra e patchwork</a></li>
+<li class="chapter" data-level="3.4" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#bar-col-density-density2d"><i class="fa fa-check"></i><b>3.4</b> bar, col, density, density2d</a></li>
+<li class="chapter" data-level="3.5" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#facet_grid-facet_grid"><i class="fa fa-check"></i><b>3.5</b> facet_grid, facet_grid</a></li>
+<li class="chapter" data-level="3.6" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#stat_function"><i class="fa fa-check"></i><b>3.6</b> stat_function</a></li>
+<li class="chapter" data-level="3.7" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#stat_summary"><i class="fa fa-check"></i><b>3.7</b> stat_summary</a></li>
 <li class="chapter" data-level="3.8" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#theme_"><i class="fa fa-check"></i><b>3.8</b> theme_</a></li>
 <li class="chapter" data-level="3.9" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#plotly"><i class="fa fa-check"></i><b>3.9</b> plotly</a></li>
 <li class="chapter" data-level="3.10" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#esquisse"><i class="fa fa-check"></i><b>3.10</b> esquisse</a></li>
+<li class="chapter" data-level="3.11" data-path="ggplot2-60-minutos.html"><a href="ggplot2-60-minutos.html#exemplo-esquisse"><i class="fa fa-check"></i><b>3.11</b> Exemplo esquisse</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="referências-on-line.html"><a href="referências-on-line.html"><i class="fa fa-check"></i><b>4</b> Referências (on-line)</a>
 <ul>
@@ -475,8 +476,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [527] &quot;xlab&quot;                      &quot;xlim&quot;                     
 ## [529] &quot;ylab&quot;                      &quot;ylim&quot;                     
 ## [531] &quot;zeroGrob&quot;</code></pre>
-<div id="primeiros-passos" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Primeiros passos<a href="ggplot2-60-minutos.html#primeiros-passos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="primeiros-passos-usando-geom_point" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Primeiros passos usando geom_point<a href="ggplot2-60-minutos.html#primeiros-passos-usando-geom_point" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="ggplot2-60-minutos.html#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="ggplot2-60-minutos.html#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy))</span></code></pre></div>
@@ -509,8 +510,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb126-5"><a href="ggplot2-60-minutos.html#cb126-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Pensar em algum título...&quot;</span>, </span>
 <span id="cb126-6"><a href="ggplot2-60-minutos.html#cb126-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Escrever alguma coisa&quot;</span>)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-20-9.png" width="672" /></p>
-<div id="mais-detalhes-sobre-geom_point" class="section level3 unnumbered hasAnchor">
-<h3>Mais detalhes sobre geom_point<a href="ggplot2-60-minutos.html#mais-detalhes-sobre-geom_point" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="mais-detalhes-sobre-geom_point" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Mais detalhes sobre geom_point<a href="ggplot2-60-minutos.html#mais-detalhes-sobre-geom_point" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <blockquote>
 <p>geom_point() understands the following aesthetics (required aesthetics are in bold):</p>
 </blockquote>
@@ -525,10 +526,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>size</p></li>
 <li><p>stroke</p></li>
 </ul>
-</div>
-</div>
-<div id="colour-shape-fill-alpha" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> colour, shape, fill, alpha<a href="ggplot2-60-minutos.html#colour-shape-fill-alpha" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="ggplot2-60-minutos.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
 <span id="cb127-2"><a href="ggplot2-60-minutos.html#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
@@ -579,8 +576,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb137-4"><a href="ggplot2-60-minutos.html#cb137-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;class&quot;</span>)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-21-11.png" width="672" /></p>
 </div>
-<div id="point-smooth-boxplot-histogram" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> point, smooth, boxplot, histogram<a href="ggplot2-60-minutos.html#point-smooth-boxplot-histogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="smooth-boxplot-histogram" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> smooth, boxplot, histogram<a href="ggplot2-60-minutos.html#smooth-boxplot-histogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="ggplot2-60-minutos.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dados)</span></code></pre></div>
 <pre><code>## Rows: 234
 ## Columns: 14
@@ -598,145 +596,189 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $ `avg miles per gallon` &lt;dbl&gt; 23.5, 25.0, 25.5, 25.5, 21.0, 22.0, 22.5, 22.0,…
 ## $ car                    &lt;chr&gt; &quot;audi a4&quot;, &quot;audi a4&quot;, &quot;audi a4&quot;, &quot;audi a4&quot;, &quot;au…
 ## $ `cyl / trans`          &lt;chr&gt; &quot;4 cylinders / auto(l5) transmission&quot;, &quot;4 cylin…</code></pre>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ggplot2-60-minutos.html#cb140-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb140-2"><a href="ggplot2-60-minutos.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb140-3"><a href="ggplot2-60-minutos.html#cb140-3" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="ggplot2-60-minutos.html#cb140-1" aria-hidden="true" tabindex="-1"></a>v1<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb140-2"><a href="ggplot2-60-minutos.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb140-3"><a href="ggplot2-60-minutos.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> mgcv<span class="sc">::</span>gam,</span>
+<span id="cb140-4"><a href="ggplot2-60-minutos.html#cb140-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> <span class="fu">s</span>(x, <span class="at">bs =</span> <span class="st">&quot;cs&quot;</span>) ,</span>
+<span id="cb140-5"><a href="ggplot2-60-minutos.html#cb140-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb140-6"><a href="ggplot2-60-minutos.html#cb140-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb140-7"><a href="ggplot2-60-minutos.html#cb140-7" aria-hidden="true" tabindex="-1"></a>v1</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="ggplot2-60-minutos.html#cb141-1" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb141-2"><a href="ggplot2-60-minutos.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb141-3"><a href="ggplot2-60-minutos.html#cb141-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> mgcv<span class="sc">::</span>gam,</span>
-<span id="cb141-4"><a href="ggplot2-60-minutos.html#cb141-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">formula =</span> y <span class="sc">~</span> <span class="fu">s</span>(x, <span class="at">bs =</span> <span class="st">&quot;cs&quot;</span>) ,</span>
-<span id="cb141-5"><a href="ggplot2-60-minutos.html#cb141-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, </span>
-<span id="cb141-6"><a href="ggplot2-60-minutos.html#cb141-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb141-7"><a href="ggplot2-60-minutos.html#cb141-7" aria-hidden="true" tabindex="-1"></a>v2</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="ggplot2-60-minutos.html#cb141-1" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb141-2"><a href="ggplot2-60-minutos.html#cb141-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb141-3"><a href="ggplot2-60-minutos.html#cb141-3" aria-hidden="true" tabindex="-1"></a>v2</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-22-2.png" width="672" /></p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="ggplot2-60-minutos.html#cb142-1" aria-hidden="true" tabindex="-1"></a>v3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb142-2"><a href="ggplot2-60-minutos.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb142-2"><a href="ggplot2-60-minutos.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
 <span id="cb142-3"><a href="ggplot2-60-minutos.html#cb142-3" aria-hidden="true" tabindex="-1"></a>v3</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-22-3.png" width="672" /></p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="ggplot2-60-minutos.html#cb143-1" aria-hidden="true" tabindex="-1"></a>v4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb143-2"><a href="ggplot2-60-minutos.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd=</span><span class="dv">2</span>)</span>
-<span id="cb143-3"><a href="ggplot2-60-minutos.html#cb143-3" aria-hidden="true" tabindex="-1"></a>v4</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="ggplot2-60-minutos.html#cb143-1" aria-hidden="true" tabindex="-1"></a>v4<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb143-2"><a href="ggplot2-60-minutos.html#cb143-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
+<span id="cb143-3"><a href="ggplot2-60-minutos.html#cb143-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb143-4"><a href="ggplot2-60-minutos.html#cb143-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span><span class="dv">3</span>)</span>
+<span id="cb143-5"><a href="ggplot2-60-minutos.html#cb143-5" aria-hidden="true" tabindex="-1"></a>v4</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-22-4.png" width="672" /></p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ggplot2-60-minutos.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Alternativas</span></span>
-<span id="cb144-2"><a href="ggplot2-60-minutos.html#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb144-3"><a href="ggplot2-60-minutos.html#cb144-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
-<span id="cb144-4"><a href="ggplot2-60-minutos.html#cb144-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;yellow&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb144-5"><a href="ggplot2-60-minutos.html#cb144-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span><span class="dv">3</span>)</span></code></pre></div>
-<p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-22-5.png" width="672" /></p>
 </div>
-<div id="gridextra-e-patchwork" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> gridExtra e patchwork<a href="ggplot2-60-minutos.html#gridextra-e-patchwork" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="gridextra-e-patchwork" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> gridExtra e patchwork<a href="ggplot2-60-minutos.html#gridextra-e-patchwork" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Alguns links</p>
 <p><a href="https://patchwork.data-imaginist.com/articles/guides/assembly.html">link 1: patchwork</a></p>
 <p><a href="https://patchwork.data-imaginist.com/articles/patchwork.html">link 2: patchwork</a></p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="ggplot2-60-minutos.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gridExtra</span></span>
-<span id="cb145-2"><a href="ggplot2-60-minutos.html#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(v1, v2, v3, v4) </span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="ggplot2-60-minutos.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gridExtra</span></span>
+<span id="cb144-2"><a href="ggplot2-60-minutos.html#cb144-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grid.arrange</span>(v1, v2, v3, v4) </span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ggplot2-60-minutos.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="co"># patchwork</span></span>
-<span id="cb146-2"><a href="ggplot2-60-minutos.html#cb146-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="ggplot2-60-minutos.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># patchwork</span></span>
+<span id="cb145-2"><a href="ggplot2-60-minutos.html#cb145-2" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-2.png" width="672" /></p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="ggplot2-60-minutos.html#cb147-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">|</span> v2</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="ggplot2-60-minutos.html#cb146-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">|</span> v2</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-3.png" width="672" /></p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ggplot2-60-minutos.html#cb148-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">/</span> v2</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="ggplot2-60-minutos.html#cb147-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">/</span> v2</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-4.png" width="672" /></p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ggplot2-60-minutos.html#cb149-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="sc">+</span> v3</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="ggplot2-60-minutos.html#cb148-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="sc">+</span> v3</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-5.png" width="672" /></p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ggplot2-60-minutos.html#cb150-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> (v2 <span class="sc">+</span> v3)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="ggplot2-60-minutos.html#cb149-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> (v2 <span class="sc">+</span> v3)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-6.png" width="672" /></p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ggplot2-60-minutos.html#cb151-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">|</span> (v2 <span class="sc">/</span> v3)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="ggplot2-60-minutos.html#cb150-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">|</span> (v2 <span class="sc">/</span> v3)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-7.png" width="672" /></p>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ggplot2-60-minutos.html#cb152-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">/</span> (v2 <span class="sc">+</span> v3)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="ggplot2-60-minutos.html#cb151-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">/</span> (v2 <span class="sc">+</span> v3)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-8.png" width="672" /></p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="ggplot2-60-minutos.html#cb153-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="sc">+</span> v3 <span class="sc">+</span> v4 </span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="ggplot2-60-minutos.html#cb152-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">+</span> v2 <span class="sc">+</span> v3 <span class="sc">+</span> v4 </span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-9.png" width="672" /></p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ggplot2-60-minutos.html#cb154-1" aria-hidden="true" tabindex="-1"></a>v1<span class="sc">/</span>(v2<span class="sc">+</span>v3<span class="sc">+</span>v4)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="ggplot2-60-minutos.html#cb153-1" aria-hidden="true" tabindex="-1"></a>v1<span class="sc">/</span>(v2<span class="sc">+</span>v3<span class="sc">+</span>v4)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-10.png" width="672" /></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="ggplot2-60-minutos.html#cb155-1" aria-hidden="true" tabindex="-1"></a>v1  <span class="sc">+</span> (v2 <span class="sc">+</span> v3 <span class="sc">+</span> v4)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="ggplot2-60-minutos.html#cb154-1" aria-hidden="true" tabindex="-1"></a>v1  <span class="sc">+</span> (v2 <span class="sc">+</span> v3 <span class="sc">+</span> v4)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-11.png" width="672" /></p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ggplot2-60-minutos.html#cb156-1" aria-hidden="true" tabindex="-1"></a>v1  <span class="sc">+</span> v2 <span class="sc">+</span> (v3 <span class="sc">+</span> v4)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="ggplot2-60-minutos.html#cb155-1" aria-hidden="true" tabindex="-1"></a>v1  <span class="sc">+</span> v2 <span class="sc">+</span> (v3 <span class="sc">+</span> v4)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-12.png" width="672" /></p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="ggplot2-60-minutos.html#cb157-1" aria-hidden="true" tabindex="-1"></a>(v1 <span class="sc">|</span> v2 <span class="sc">|</span> v3) <span class="sc">/</span> v4</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="ggplot2-60-minutos.html#cb156-1" aria-hidden="true" tabindex="-1"></a>(v1 <span class="sc">|</span> v2 <span class="sc">|</span> v3) <span class="sc">/</span> v4</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-23-13.png" width="672" /></p>
 </div>
-<div id="bar-col-density-density2d" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> bar, col, density, density2d<a href="ggplot2-60-minutos.html#bar-col-density-density2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ggplot2-60-minutos.html#cb158-1" aria-hidden="true" tabindex="-1"></a>v5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span> </span>
-<span id="cb158-2"><a href="ggplot2-60-minutos.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span> </span>
-<span id="cb158-3"><a href="ggplot2-60-minutos.html#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span>
-<span id="cb158-4"><a href="ggplot2-60-minutos.html#cb158-4" aria-hidden="true" tabindex="-1"></a>v5</span></code></pre></div>
+<div id="bar-col-density-density2d" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> bar, col, density, density2d<a href="ggplot2-60-minutos.html#bar-col-density-density2d" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="ggplot2-60-minutos.html#cb157-1" aria-hidden="true" tabindex="-1"></a>v5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> manufacturer)) <span class="sc">+</span> </span>
+<span id="cb157-2"><a href="ggplot2-60-minutos.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()<span class="sc">+</span> </span>
+<span id="cb157-3"><a href="ggplot2-60-minutos.html#cb157-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span>
+<span id="cb157-4"><a href="ggplot2-60-minutos.html#cb157-4" aria-hidden="true" tabindex="-1"></a>v5</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ggplot2-60-minutos.html#cb159-1" aria-hidden="true" tabindex="-1"></a>v6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb159-2"><a href="ggplot2-60-minutos.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()<span class="sc">+</span></span>
-<span id="cb159-3"><a href="ggplot2-60-minutos.html#cb159-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span>
-<span id="cb159-4"><a href="ggplot2-60-minutos.html#cb159-4" aria-hidden="true" tabindex="-1"></a>v6</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="ggplot2-60-minutos.html#cb158-1" aria-hidden="true" tabindex="-1"></a>v6 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb158-2"><a href="ggplot2-60-minutos.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>()<span class="sc">+</span></span>
+<span id="cb158-3"><a href="ggplot2-60-minutos.html#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span>
+<span id="cb158-4"><a href="ggplot2-60-minutos.html#cb158-4" aria-hidden="true" tabindex="-1"></a>v6</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="ggplot2-60-minutos.html#cb160-1" aria-hidden="true" tabindex="-1"></a>v7 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
-<span id="cb160-2"><a href="ggplot2-60-minutos.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span>
-<span id="cb160-3"><a href="ggplot2-60-minutos.html#cb160-3" aria-hidden="true" tabindex="-1"></a>v7</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="ggplot2-60-minutos.html#cb159-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb159-2"><a href="ggplot2-60-minutos.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(manufacturer, cty) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-3"><a href="ggplot2-60-minutos.html#cb159-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(manufacturer) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-4"><a href="ggplot2-60-minutos.html#cb159-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">soma_total_cty =</span> <span class="fu">sum</span>(cty),</span>
+<span id="cb159-5"><a href="ggplot2-60-minutos.html#cb159-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 15 × 3
+##    manufacturer soma_total_cty     n
+##    &lt;chr&gt;                 &lt;int&gt; &lt;int&gt;
+##  1 audi                    317    18
+##  2 chevrolet               285    19
+##  3 dodge                   486    37
+##  4 ford                    350    25
+##  5 honda                   220     9
+##  6 hyundai                 261    14
+##  7 jeep                    108     8
+##  8 land rover               46     4
+##  9 lincoln                  34     3
+## 10 mercury                  53     4
+## 11 nissan                  235    13
+## 12 pontiac                  85     5
+## 13 subaru                  270    14
+## 14 toyota                  630    34
+## 15 volkswagen              565    27</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="ggplot2-60-minutos.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dados %&gt;% </span></span>
+<span id="cb161-2"><a href="ggplot2-60-minutos.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   filter(manufacturer == &quot;audi&quot;) %&gt;% </span></span>
+<span id="cb161-3"><a href="ggplot2-60-minutos.html#cb161-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   select(cty) %&gt;% </span></span>
+<span id="cb161-4"><a href="ggplot2-60-minutos.html#cb161-4" aria-hidden="true" tabindex="-1"></a><span class="co">#   sum()</span></span>
+<span id="cb161-5"><a href="ggplot2-60-minutos.html#cb161-5" aria-hidden="true" tabindex="-1"></a>v7 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados , <span class="fu">aes</span>(<span class="at">x =</span> cty)) <span class="sc">+</span> </span>
+<span id="cb161-6"><a href="ggplot2-60-minutos.html#cb161-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>()</span>
+<span id="cb161-7"><a href="ggplot2-60-minutos.html#cb161-7" aria-hidden="true" tabindex="-1"></a>v7</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-24-3.png" width="672" /></p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="ggplot2-60-minutos.html#cb161-1" aria-hidden="true" tabindex="-1"></a>v8 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
-<span id="cb161-2"><a href="ggplot2-60-minutos.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density2d</span>()</span>
-<span id="cb161-3"><a href="ggplot2-60-minutos.html#cb161-3" aria-hidden="true" tabindex="-1"></a>v8</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="ggplot2-60-minutos.html#cb162-1" aria-hidden="true" tabindex="-1"></a>v8 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb162-2"><a href="ggplot2-60-minutos.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density2d</span>()<span class="sc">+</span></span>
+<span id="cb162-3"><a href="ggplot2-60-minutos.html#cb162-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb162-4"><a href="ggplot2-60-minutos.html#cb162-4" aria-hidden="true" tabindex="-1"></a>v8</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-24-4.png" width="672" /></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="ggplot2-60-minutos.html#cb162-1" aria-hidden="true" tabindex="-1"></a>(v5<span class="sc">+</span>v6)<span class="sc">/</span> (v7 <span class="sc">+</span> v8)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="ggplot2-60-minutos.html#cb163-1" aria-hidden="true" tabindex="-1"></a>(v5<span class="sc">+</span>v6)<span class="sc">/</span> (v7 <span class="sc">+</span> v8)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-24-5.png" width="672" /></p>
 </div>
-<div id="facet_grid-facet_grid" class="section level2 hasAnchor" number="3.6">
-<h2><span class="header-section-number">3.6</span> facet_grid, facet_grid<a href="ggplot2-60-minutos.html#facet_grid-facet_grid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="ggplot2-60-minutos.html#cb163-1" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
-<span id="cb163-2"><a href="ggplot2-60-minutos.html#cb163-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
-<span id="cb163-3"><a href="ggplot2-60-minutos.html#cb163-3" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
+<div id="facet_grid-facet_grid" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> facet_grid, facet_grid<a href="ggplot2-60-minutos.html#facet_grid-facet_grid" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="ggplot2-60-minutos.html#cb164-1" aria-hidden="true" tabindex="-1"></a>p1<span class="ot">&lt;-</span> <span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> cty, <span class="at">y =</span> hwy)) <span class="sc">+</span></span>
+<span id="cb164-2"><a href="ggplot2-60-minutos.html#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb164-3"><a href="ggplot2-60-minutos.html#cb164-3" aria-hidden="true" tabindex="-1"></a>p1</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="ggplot2-60-minutos.html#cb164-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(cyl))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="ggplot2-60-minutos.html#cb165-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(cyl))</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-2.png" width="672" /></p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="ggplot2-60-minutos.html#cb165-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(cyl))</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="ggplot2-60-minutos.html#cb166-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(cyl))</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-3.png" width="672" /></p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="ggplot2-60-minutos.html#cb166-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="ggplot2-60-minutos.html#cb167-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="sc">~</span>cyl)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-4.png" width="672" /></p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="ggplot2-60-minutos.html#cb167-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(year), <span class="at">cols =</span><span class="fu">vars</span>(cyl))</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="ggplot2-60-minutos.html#cb168-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(year), <span class="at">cols =</span><span class="fu">vars</span>(cyl))</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-5.png" width="672" /></p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="ggplot2-60-minutos.html#cb168-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(year<span class="sc">~</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ggplot2-60-minutos.html#cb169-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_grid</span>(year<span class="sc">~</span>cyl)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-6.png" width="672" /></p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="ggplot2-60-minutos.html#cb169-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_wrap</span>(year<span class="sc">~</span>cyl)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ggplot2-60-minutos.html#cb170-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_wrap</span>(year<span class="sc">~</span>cyl)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-7.png" width="672" /></p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="ggplot2-60-minutos.html#cb170-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_wrap</span>(year<span class="sc">~</span>cyl, <span class="at">ncol =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ggplot2-60-minutos.html#cb171-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> <span class="fu">facet_wrap</span>(year<span class="sc">~</span>cyl, <span class="at">ncol =</span> <span class="dv">4</span>)</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-25-8.png" width="672" /></p>
 </div>
-<div id="stat_function" class="section level2 hasAnchor" number="3.7">
-<h2><span class="header-section-number">3.7</span> stat_function<a href="ggplot2-60-minutos.html#stat_function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="ggplot2-60-minutos.html#cb171-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="co"># média</span></span>
-<span id="cb171-2"><a href="ggplot2-60-minutos.html#cb171-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">&lt;-</span> <span class="dv">4</span>  <span class="co"># desv. padrão</span></span>
-<span id="cb171-3"><a href="ggplot2-60-minutos.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(a <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>b, a <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>b)), <span class="fu">aes</span>(x)) <span class="sc">+</span> </span>
-<span id="cb171-4"><a href="ggplot2-60-minutos.html#cb171-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> a, <span class="at">sd =</span> b))<span class="sc">+</span></span>
-<span id="cb171-5"><a href="ggplot2-60-minutos.html#cb171-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(a <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>b, a, a <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>b), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb171-6"><a href="ggplot2-60-minutos.html#cb171-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div id="stat_function" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> stat_function<a href="ggplot2-60-minutos.html#stat_function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ggplot2-60-minutos.html#cb172-1" aria-hidden="true" tabindex="-1"></a>a<span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">3</span> <span class="co"># média</span></span>
+<span id="cb172-2"><a href="ggplot2-60-minutos.html#cb172-2" aria-hidden="true" tabindex="-1"></a>b<span class="ot">&lt;-</span> <span class="dv">4</span>  <span class="co"># desv. padrão</span></span>
+<span id="cb172-3"><a href="ggplot2-60-minutos.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(a <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>b, a <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>b)), <span class="fu">aes</span>(x)) <span class="sc">+</span> </span>
+<span id="cb172-4"><a href="ggplot2-60-minutos.html#cb172-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> a, <span class="at">sd =</span> b))<span class="sc">+</span></span>
+<span id="cb172-5"><a href="ggplot2-60-minutos.html#cb172-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">c</span>(a <span class="sc">-</span> <span class="dv">3</span><span class="sc">*</span>b, a, a <span class="sc">+</span> <span class="dv">3</span><span class="sc">*</span>b), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb172-6"><a href="ggplot2-60-minutos.html#cb172-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+</div>
+<div id="stat_summary" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> stat_summary<a href="ggplot2-60-minutos.html#stat_summary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ggplot2-60-minutos.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> manufacturer, <span class="at">y =</span> hwy)) <span class="sc">+</span> </span>
+<span id="cb173-2"><a href="ggplot2-60-minutos.html#cb173-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">col =</span> <span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb173-3"><a href="ggplot2-60-minutos.html#cb173-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb173-4"><a href="ggplot2-60-minutos.html#cb173-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>))</span></code></pre></div>
+<p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 <div id="theme_" class="section level2 hasAnchor" number="3.8">
 <h2><span class="header-section-number">3.8</span> theme_<a href="ggplot2-60-minutos.html#theme_" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="ggplot2-60-minutos.html#cb172-1" aria-hidden="true" tabindex="-1"></a>a1<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_bw()&quot;</span>)</span>
-<span id="cb172-2"><a href="ggplot2-60-minutos.html#cb172-2" aria-hidden="true" tabindex="-1"></a>a2<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_classic()&quot;</span>)</span>
-<span id="cb172-3"><a href="ggplot2-60-minutos.html#cb172-3" aria-hidden="true" tabindex="-1"></a>a3<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_light()&quot;</span>)</span>
-<span id="cb172-4"><a href="ggplot2-60-minutos.html#cb172-4" aria-hidden="true" tabindex="-1"></a>a4<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_minimal()&quot;</span>)</span>
-<span id="cb172-5"><a href="ggplot2-60-minutos.html#cb172-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb172-6"><a href="ggplot2-60-minutos.html#cb172-6" aria-hidden="true" tabindex="-1"></a>a1 <span class="sc">+</span> a2 <span class="sc">+</span> a3 <span class="sc">+</span> a4</span></code></pre></div>
-<p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="ggplot2-60-minutos.html#cb174-1" aria-hidden="true" tabindex="-1"></a>a1<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_bw()&quot;</span>)</span>
+<span id="cb174-2"><a href="ggplot2-60-minutos.html#cb174-2" aria-hidden="true" tabindex="-1"></a>a2<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_classic()&quot;</span>)</span>
+<span id="cb174-3"><a href="ggplot2-60-minutos.html#cb174-3" aria-hidden="true" tabindex="-1"></a>a3<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_light()&quot;</span>)</span>
+<span id="cb174-4"><a href="ggplot2-60-minutos.html#cb174-4" aria-hidden="true" tabindex="-1"></a>a4<span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;theme_minimal()&quot;</span>)</span>
+<span id="cb174-5"><a href="ggplot2-60-minutos.html#cb174-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-6"><a href="ggplot2-60-minutos.html#cb174-6" aria-hidden="true" tabindex="-1"></a>a1 <span class="sc">+</span> a2 <span class="sc">+</span> a3 <span class="sc">+</span> a4</span></code></pre></div>
+<p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 </div>
 <div id="plotly" class="section level2 hasAnchor" number="3.9">
 <h2><span class="header-section-number">3.9</span> plotly<a href="ggplot2-60-minutos.html#plotly" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><a href="https://cran.r-project.org/web/packages/plotly/index.html">plotly cran</a></p>
 <p><a href="https://plotly-r.com/">Interactive web-based data visualization with R, plotly, and shiny</a></p>
 <p><a href="https://plotly.com/r/">Plotly R Open Source Graphing Library</a></p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="ggplot2-60-minutos.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v1)</span>
-<span id="cb173-2"><a href="ggplot2-60-minutos.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v2)</span>
-<span id="cb173-3"><a href="ggplot2-60-minutos.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v4)</span>
-<span id="cb173-4"><a href="ggplot2-60-minutos.html#cb173-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v5)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="ggplot2-60-minutos.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v1)</span>
+<span id="cb175-2"><a href="ggplot2-60-minutos.html#cb175-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v2)</span>
+<span id="cb175-3"><a href="ggplot2-60-minutos.html#cb175-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v4)</span>
+<span id="cb175-4"><a href="ggplot2-60-minutos.html#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(v5)</span></code></pre></div>
 </div>
 <div id="esquisse" class="section level2 hasAnchor" number="3.10">
 <h2><span class="header-section-number">3.10</span> esquisse<a href="ggplot2-60-minutos.html#esquisse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Alguns links de interesse</p>
 <p><a href="https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html">esquisse</a></p>
 <p><a href="https://cran.r-project.org/web/packages/esquisse/vignettes/shiny-usage.html">esquisse + shiny</a></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="ggplot2-60-minutos.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">esquisser</span>(dados)</span></code></pre></div>
+</div>
+<div id="exemplo-esquisse" class="section level2 hasAnchor" number="3.11">
+<h2><span class="header-section-number">3.11</span> Exemplo esquisse<a href="ggplot2-60-minutos.html#exemplo-esquisse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="ggplot2-60-minutos.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados) <span class="sc">+</span></span>
+<span id="cb177-2"><a href="ggplot2-60-minutos.html#cb177-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> cty, <span class="at">colour =</span> class, <span class="at">size =</span> cty) <span class="sc">+</span></span>
+<span id="cb177-3"><a href="ggplot2-60-minutos.html#cb177-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="st">&quot;circle&quot;</span>) <span class="sc">+</span></span>
+<span id="cb177-4"><a href="ggplot2-60-minutos.html#cb177-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_hue</span>(<span class="at">direction =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb177-5"><a href="ggplot2-60-minutos.html#cb177-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;top&quot;</span>) <span class="sc">+</span></span>
+<span id="cb177-6"><a href="ggplot2-60-minutos.html#cb177-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(drv))</span></code></pre></div>
+<p><img src="UFLA_verao_2023_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 
 </div>
 </div>
