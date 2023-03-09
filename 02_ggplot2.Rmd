@@ -1,0 +1,230 @@
+# ggplot2 (60 minutos)
+
+Alguns links
+
+[The R Graph Gallery](https://r-graph-gallery.com/)
+
+[120 registered extensions available to explore](https://exts.ggplot2.tidyverse.org/gallery/)
+
+[link 1: patchwork](https://patchwork.data-imaginist.com/articles/guides/assembly.html)
+
+[link 2: patchwork](https://patchwork.data-imaginist.com/articles/patchwork.html)
+
+
+```{r}
+ls("package:ggplot2")
+```
+
+## Primeiros passos
+
+```{r}
+ggplot(dados)
+
+ggplot(dados, aes(x = cty, y = hwy))
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point()
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(colour = "red")
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(colour = "red", size = 6)
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(colour = "red", size = 6, shape = 10)
+
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(colour = "red", size = 6, shape = 10)+
+  labs(x = "cty (city miles per gallon hwy)", 
+       y = "hwy (highway miles per gallon)", 
+       title = "Pensar em algum título...", 
+       subtitle = "Escrever alguma coisa")
+```
+
+## color, shape, fill, alpha
+
+```{r}
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point()
+
+ggplot(dados, aes(x = cty, y = hwy, col = factor(year))) + 
+  geom_point() + 
+  labs(col = "year")
+
+ggplot(dados, aes(x = cty, y = hwy, col = factor(year))) + 
+  geom_point(col = "blue") + 
+  labs(col = "year")
+
+ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
+  geom_col(position = "dodge") + 
+  labs(fill = "year") +
+  theme(axis.text.x = element_text(angle = 45))
+
+ggplot(dados, aes(x = cty, y = hwy, shape = factor(year))) + 
+  geom_point(col = "red") + 
+  labs(shape = "year")
+
+
+ggplot(dados, aes(x = cty, y = hwy, size = factor(class))) + 
+  geom_point() + 
+  labs(size = "year")
+
+ggplot(dados, aes(x = cty, y = hwy, size = factor(class), col = factor(class))) + 
+  geom_point() + 
+  labs(size = "year", 
+       col = "class")
+
+```
+
+## point, smooth, boxplot, histogram
+
+
+```{r}
+glimpse(dados)
+
+ggplot(dados, aes(x = cty)) + 
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 10, fill = "yellow", col = "red") +
+  geom_density(col = "blue", lwd =3)
+
+
+v1 <- ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(col = "blue")
+v1
+
+v2 <- ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(col = "blue")+
+  geom_smooth(method = mgcv::gam,
+              formula = y ~ s(x, bs = "cs") ,
+              col = "red", 
+              se = FALSE)
+v2
+
+v3 <- ggplot(dados, aes(x = cty)) + 
+  geom_boxplot(fill = "red")
+v3
+
+v4 <- ggplot(dados, aes(x = cty)) + 
+  geom_histogram(bins = 10, fill = "red", col = "blue", lwd=2)
+v4
+```
+
+## gridExtra e patchwork
+
+
+Alguns links
+
+[link 1: patchwork](https://patchwork.data-imaginist.com/articles/guides/assembly.html)
+
+[link 2: patchwork](https://patchwork.data-imaginist.com/articles/patchwork.html)
+
+```{r}
+# gridExtra
+grid.arrange(v1, v2, v3, v4) 
+
+# patchwork
+v1 + v2
+v1 | v2
+v1 / v2
+
+
+v1 + v2 + v3
+v1 + (v2 + v3)
+v1 | (v2 / v3)
+v1 / (v2 + v3)
+
+v1 + v2 + v3 + v4 
+v1/(v2+v3+v4)
+v1  + (v2 + v3 + v4)
+v1  + v2 + (v3 + v4)
+(v1 | v2 | v3) / v4
+```
+
+
+## bar, col, density, density2d
+
+```{r}
+v5 <- ggplot(dados , aes(x = manufacturer)) + 
+  geom_bar()+ 
+  theme(axis.text.x = element_text(angle = 45))
+v5
+
+v6 <- ggplot(dados , aes(x = manufacturer, y = cty)) + 
+  geom_col()+
+  theme(axis.text.x = element_text(angle = 45))
+v6
+
+v7 <- ggplot(dados , aes(x = cty)) + 
+  geom_density()
+v7
+
+v8 <- ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_density2d()
+v8
+
+(v5+v6)/ (v7 + v8)
+```
+
+## facet_grid, facet_grid
+
+```{r}
+p1<- ggplot(dados, aes(x = cty, y = hwy)) +
+  geom_point()
+p1
+
+p1 + facet_grid(rows = vars(cyl))
+p1 + facet_grid(cols = vars(cyl))
+p1 + facet_grid(~cyl)
+p1 + facet_grid(rows = vars(year), cols =vars(cyl))
+p1 + facet_grid(year~cyl)
+
+p1 + facet_wrap(year~cyl)
+p1 + facet_wrap(year~cyl, ncol = 4)
+```
+
+
+## stat_function
+
+```{r}
+a<- -3 # média
+b<- 4  # desv. padrão
+ggplot(data.frame(x = c(a - 3*b, a + 3*b)), aes(x)) + 
+  stat_function(fun = dnorm, args = list(mean = a, sd = b))+
+  geom_vline(xintercept = c(a - 3*b, a, a + 3*b), col = "red", lty = 2)+
+  theme_minimal()
+```
+
+## theme_
+
+```{r}
+a1<- p1 + theme_bw() + labs(title = "theme_bw()")
+a2<- p1 + theme_classic() + labs(title = "theme_classic()")
+a3<- p1 + theme_light() + labs(title = "theme_light()")
+a4<- p1 + theme_minimal() + labs(title = "theme_minimal()")
+
+a1 + a2 + a3 + a4
+```
+
+## plotly
+
+
+[plotly cran](https://cran.r-project.org/web/packages/plotly/index.html)
+
+[Interactive web-based data visualization with R, plotly, and shiny](https://plotly-r.com/)
+
+[Plotly R Open Source Graphing Library](https://plotly.com/r/)
+
+```{r, eval=FALSE}
+ggplotly(v1)
+ggplotly(v2)
+ggplotly(v4)
+ggplotly(v5)
+```
+
+
+## esquisse
+
+[esquisse](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)
+
+[esquisse + shiny](https://cran.r-project.org/web/packages/esquisse/vignettes/shiny-usage.html)

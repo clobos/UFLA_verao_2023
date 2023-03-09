@@ -1,0 +1,111 @@
+--- 
+title: "Um breve tutorial sobre dplyr com ggplot2"
+author:
+  - name: "Cristian Villegas (clobos@usp.br)"
+    url: https://github.com/clobos/UFLA_verao_2023/
+    affiliation: Universidade de São Paulo, Escola Superior de Agricultura "Luiz de Queiroz"
+    affiliation_url: http://www.lce.esalq.usp.br/equipe/docentes
+date: "10/03/2023"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Dizer alguma coisa
+link-citations: yes
+github-repo: clobos/ufla_verao_2023
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE,
+                      warning = FALSE,
+                      cache = TRUE,
+                      out.width = "5in", 
+                      out.height = "3in")
+```
+
+
+# Introdução
+
+Palestra do *XIV Programa de Verão DES-ICET/UFLA - 2023*
+
+## Alguns atalhos no Rstudio
+
+Para considerar
+
+  > Operador Pipe (%>%): Ctrl + Shift + M (Windows) ou Cmd + Shift + M (Mac).
+
+  > Criar novos chunks: Cmd + Option + I (Windows Ctrl + Alt + I).
+  
+  
+
+## Carrega pacotes a serem usados
+
+```{r}
+#install.packages("tidyverse") 
+#install.packages("dplyr")     
+#install.packages("tidyr")     
+#install.packages("ggplot2")   
+
+# Manipulação de dados
+library(dplyr)
+
+# Visualização de gráficos
+library(ggplot2)
+library(gridExtra)
+library(patchwork)
+library(plotly)
+library(esquisse)
+```
+
+
+
+## Descrição dos dados `mpg` 
+
+
+Fuel economy data from 1999 to 2008 for 38 popular models of cars. This dataset contains a subset of the fuel economy data that the EPA makes available on https://fueleconomy.gov/. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. A data frame with 234 rows and 11 variables:
+
+  - manufacturer manufacturer name
+
+  - model model name
+
+  - displ engine displacement, in litres
+
+  - year year of manufacture
+
+  - cyl number of cylinders
+
+  - trans type of transmission
+
+  - drv the type of drive train, where f = front-wheel drive, r = rear wheel drive, 4 = 4wd
+
+  - cty city miles per gallon
+
+  - hwy highway miles per gallon
+
+  - fl fuel type
+
+  - class "type" of car
+
+```{r}
+#help("mpg")
+dados <- mpg
+#View(df) 
+glimpse(dados)
+```
+
+## Progapanda 1 (Gustavo Jun Yakushiji)
+
+Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no youtube
+
+[Dia 1 Introdução à Ciência de Dados (Introdução ao R e importação de dados)](https://youtu.be/gf2-KtABk9c)
+
+[Dia 2 Introdução à Ciência de Dados (Introdução ao ggplot2)](https://youtu.be/qCuzyUr0HBk)
+
+[Dia 3 Introdução à Ciência de Dados (Introdução ao Tidyverse)](https://youtu.be/dCY005dgEVo)
+
+## Propaganda 2 (Gustavo Jun Yakushiji)
+
+[Introdução à Ciência de Dados em R, Gustavo Jun Yakushiji; Cristian Villegas](https://gustavojy.github.io/ApostilaCD-R/)
