@@ -1,4 +1,5 @@
 --- 
+lang: "pt-br"
 title: "Um breve tutorial sobre dplyr com ggplot2"
 author:
   - name: "Cristian Villegas (clobos@usp.br)"
@@ -9,8 +10,6 @@ date: "10/03/2023"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
 description: |
   Dizer alguma coisa
 link-citations: yes
@@ -34,10 +33,8 @@ Para considerar
 
   > Operador Pipe (%>%): Ctrl + Shift + M (Windows) ou Cmd + Shift + M (Mac).
 
-  > Criar novos chunks: Cmd + Option + I (Windows Ctrl + Alt + I).
+  > Criar novos chunks: Ctrl + Alt + I (Windows) ou Cmd + Option + I (Mac).
   
-  
-
 ## Carrega pacotes a serem usados
 
 ```{r}
@@ -55,47 +52,54 @@ library(gridExtra)
 library(patchwork)
 library(plotly)
 library(esquisse)
+
+# Para dados gráfico de perfis
+library(nlme)
 ```
 
 
 
 ## Descrição dos dados `mpg` 
 
+Dados de economia de combustível de 1999 a 2008 para *38 modelos populares de carros*. Este conjunto de dados contém um subconjunto dos dados de economia de combustível que a EPA disponibiliza em *https://fueleconomy.gov/*. Ele contém apenas modelos que tiveram um novo lançamento a cada ano entre 1999 e 2008 - isso foi usado como um substituto para a popularidade do carro. Um *data frame* com 234 linhas e 11 variáveis:
 
-Fuel economy data from 1999 to 2008 for 38 popular models of cars. This dataset contains a subset of the fuel economy data that the EPA makes available on https://fueleconomy.gov/. It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. A data frame with 234 rows and 11 variables:
+  - *manufacturer* nome do fabricante 
 
-  - manufacturer manufacturer name
+  - *model* nome do modelo
 
-  - model model name
+  - *displ* cilindrada do motor, em litros
 
-  - displ engine displacement, in litres
+  - *year* ano de fabricação
 
-  - year year of manufacture
+  - *cyl* número de cilindros
 
-  - cyl number of cylinders
+  - *trans* tipo de transmissão
 
-  - trans type of transmission
+  - *drv* o tipo de trem de força, onde **f = tração dianteira**, **r = tração traseira** e **4 = 4wd**
 
-  - drv the type of drive train, where f = front-wheel drive, r = rear wheel drive, 4 = 4wd
+  - *cty* milhas urbanas  por galão
 
-  - cty city miles per gallon
+  - *hwy* milhas rodoviárias por galão
 
-  - hwy highway miles per gallon
+  - *fl* tipo de combustível
 
-  - fl fuel type
-
-  - class "type" of car
-
+  - *class* "tipo" de carro
+  
 ```{r}
 #help("mpg")
 dados <- mpg
+glimpse(dados)
+
+dados <- mutate(.data = dados, 
+                across(where(is.character), 
+                as.factor))
 #View(df) 
 glimpse(dados)
 ```
 
 ## Propaganda 1 (Gustavo Jun Yakushiji)
 
-Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no youtube
+Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no *youtube*
 
 [Dia 1 Introdução à Ciência de Dados (Introdução ao R e importação de dados)](https://youtu.be/gf2-KtABk9c)
 
@@ -106,3 +110,12 @@ Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no y
 ## Propaganda 2 (Gustavo Jun Yakushiji)
 
 [Introdução à Ciência de Dados em R, Gustavo Jun Yakushiji; Cristian Villegas](https://gustavojy.github.io/ApostilaCD-R/)
+
+
+## Propaganda 3 
+
+  > Como pegar o código fonte do meu github? [Link do meu github](https://github.com/clobos/UFLA_verao_2023)
+  
+  > Como pegar o arquivo PDF da apresentação? [link: Um breve tutorial sobre dplyr com ggplot2](https://clobos.github.io/UFLA_verao_2023/) ou [Arquivo PDF](https://clobos.github.io/UFLA_verao_2023/UFLA_verao_2023.pdf)
+  
+  

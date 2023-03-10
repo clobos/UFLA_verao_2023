@@ -11,6 +11,8 @@ Alguns links
 [link 2: patchwork](https://patchwork.data-imaginist.com/articles/patchwork.html)
 
 
+## Lista de funções do pacote ggplot2
+
 ```{r}
 ls("package:ggplot2")
 ```
@@ -41,6 +43,10 @@ ggplot(dados, aes(x = cty, y = hwy)) +
 
 ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(colour = "red", size = 6, shape = 10)
+
+# Alternativa
+ggplot(dados, aes(x = cty, y = hwy)) + 
+  geom_point(colour = "red", size = 6, shape = "circle plus")
 
 ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(colour = "red", size = 6, shape = 10)+
@@ -89,8 +95,9 @@ ggplot(dados, aes(x = cty, y = hwy, size = factor(year))) +
   labs(size = "year")
 
 # Alternativa
-ggplot(dados, aes(x = cty, y = hwy, col = cty < 20)) + 
+ggplot(dados, aes(x = cty, y = hwy, col = cty <= 20)) + 
   geom_point() + 
+  geom_vline(xintercept = 20)+
   labs(col = "year")
 
 # Erro comum
@@ -102,11 +109,6 @@ ggplot(dados, aes(x = cty, y = hwy)) +
   geom_point(col = "red")+
   labs(col = "year")
 # Fim  Erro comum
-
-ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
-  geom_col(position = "dodge") + 
-  labs(fill = "year") +
-  theme(axis.text.x = element_text(angle = 45))
 
 ggplot(dados, aes(x = cty, y = hwy, shape = factor(year))) + 
   geom_point(col = "red") + 
@@ -128,8 +130,6 @@ ggplot(dados, aes(x = cty, y = hwy, size = factor(class), col = factor(class))) 
 
 
 ```{r}
-glimpse(dados)
-
 v1<- ggplot(dados, aes(x = cty, y = hwy)) + 
   geom_point(col = "blue")+
   geom_smooth(method = mgcv::gam,
@@ -151,6 +151,13 @@ v4<- ggplot(dados, aes(x = cty)) +
                  bins = 10, fill = "yellow", col = "red") +
   geom_density(col = "blue", lwd =3)
 v4
+
+# Adicional (estatístic experimental)
+ggplot(dados, aes(x = drv, y = cty, col = drv)) + 
+  geom_boxplot()+
+  theme_bw()+
+  theme(legend.position = "none")
+  
 ```
 
 ## gridExtra e patchwork
@@ -193,6 +200,7 @@ v5 <- ggplot(dados , aes(x = manufacturer)) +
   theme(axis.text.x = element_text(angle = 45))
 v5
 
+# Dúvidas no geom_col
 v6 <- ggplot(dados , aes(x = manufacturer, y = cty)) + 
   geom_col()+
   theme(axis.text.x = element_text(angle = 45))
@@ -219,6 +227,40 @@ v8
 
 
 (v5+v6)/ (v7 + v8)
+
+# Deixar pra depois...
+ dados %>% 
+    select(manufacturer, hwy, year) %>% 
+    filter(manufacturer == "audi", year == "1999") %>% 
+    summarise(media = max(hwy))
+ 
+ggplotly(
+ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
+  geom_col(position = "dodge") + 
+  labs(fill = "year") +
+  theme(axis.text.x = element_text(angle = 45)))
+
+dados %>% select(manufacturer, hwy, year) %>% 
+  group_by(manufacturer, year) %>% 
+  summarise(media = mean(hwy))
+
+# Para pensar
+
+(dados_trat <- data.frame(tratamento = LETTERS[1:3], 
+                         resposta = c(2.3, 1.9, 3.2)))
+
+ggplot(dados_trat, aes(tratamento, resposta)) +
+  geom_col(fill = "red")
+
+# Mais detalhes...
+dados %>% select(manufacturer, hwy, year) %>% 
+  group_by(manufacturer, year) %>% 
+  summarise(media = mean(hwy), .groups = "drop") %>% 
+  ggplot(aes(x = manufacturer, y = media, fill = factor(year)))+
+  geom_col(position = "dodge")+
+  labs(fill = "year") +
+  theme(axis.text.x = element_text(angle = 45))
+
 ```
 
 ## facet_grid, facet_grid
@@ -254,12 +296,14 @@ ggplot(data.frame(x = c(a - 3*b, a + 3*b)), aes(x)) +
 
 ```{r}
 ggplot(dados, aes(x = manufacturer, y = hwy)) + 
-  geom_point(col = "red")+
+  geom_boxplot()+
+  geom_point(col = "red", size=0.8)+
   stat_summary(fun = mean, col = "blue")+
+  theme_minimal()+
   theme(axis.text.x = element_text(angle = 45))
 ```
 
-## theme_
+## theme_*()
 
 ```{r}
 a1<- p1 + theme_bw() + labs(title = "theme_bw()")
@@ -270,8 +314,31 @@ a4<- p1 + theme_minimal() + labs(title = "theme_minimal()")
 a1 + a2 + a3 + a4
 ```
 
-## plotly
 
+## Gráfico de perfis (Spaguetti plot)
+
+```{r}
+glimpse(Orange)
+
+ggplot(Orange, aes(x = age, y = circumference, group = Tree, 
+                   col = Tree)) +
+  geom_line()+
+  stat_summary(aes(group = 1), fun = mean, col = "red", 
+               geom = "line", size = 1, show.legend = FALSE,
+               linetype = 2)+
+  xlim(0, 1600)+
+  theme_minimal()
+
+ggplot(Orange, aes(x = age, y = circumference, group = Tree)) +
+  geom_line()+
+  xlim(0, 1600)+
+  facet_wrap(~Tree)+
+  theme_minimal()+
+  theme(legend.position = "none")
+ 
+```
+
+## plotly
 
 [plotly cran](https://cran.r-project.org/web/packages/plotly/index.html)
 
@@ -300,6 +367,7 @@ esquisser(dados)
 ```
 
 ## Exemplo esquisse
+
 ```{r}
 ggplot(dados) +
   aes(x = displ, y = cty, colour = class, size = cty) +

@@ -1,6 +1,6 @@
 # dplyr (60 minutos)
 
-
+## Lista de funções do pacote dplyr
 ```{r}
 ls("package:dplyr")
 ```
@@ -14,7 +14,7 @@ sqrt(log(44))
 44 %>% log %>% sqrt
 ```
 
-## select() para linhas
+## select() para colunas
 
 ```{r}
 select(dados, manufacturer, model, year)
@@ -103,21 +103,23 @@ filter(dados, between(cty,15, 22))
 
 ```{r}
 slice(dados, 1:5)
-dados[1:5,]
+# dados[1:5,]
 
 slice(dados, 20:30)
-dados[20:30,]
+# dados[20:30,]
 ```
 
 
 ## arrange() para linhas
 
 ```{r}
+# ordenar "displ" de menor a maior
 arrange(dados, displ)
 
 arrange(dados, displ) %>% 
   print(n=20)
 
+# ordenar "displ" de maior a  menor
 arrange(dados, desc(displ))
 
 arrange(dados, desc(displ)) %>% 
@@ -160,17 +162,24 @@ dados_nao_duplicados
 ## summarise()
 
 ```{r}
-summarise(dados, `mean hwy` = mean(hwy))
+summarise(dados, `média hwy` = mean(hwy))
 
 summarise(dados, 
-          rows = n(),
-          `nr models` = n_distinct(model))
+          `num. de dados` = n(),
+          `num. modelos` = n_distinct(model))
 
 summarise(dados, 
-          `min hwy` = min(hwy),
-          `min cty` = min(cty),
-          `max hwy` = max(hwy),
-          `max cty` = max(cty))
+          `mín. hwy` = min(hwy, na.rm = TRUE),
+          `mín. cty` = min(cty, na.rm = TRUE),
+          `máx. hwy` = max(hwy, na.rm = TRUE),
+          `máx. cty` = max(cty, na.rm = TRUE))
+
+dados %>%
+  summarise_at(c("hwy", "cty"), list(min, max), na.rm = TRUE)
+
+dados %>%
+  summarise_if(is.numeric, list(min, max), na.rm = TRUE) 
+
 ```
 
 ## group_by() 
@@ -180,13 +189,13 @@ group_by(dados, manufacturer)
 
 dados %>% 
   group_by(manufacturer) %>%
-  summarise(cars = n())
+  summarise(`num. carros` = n())
 
 dados %>% 
   group_by(model) %>%
-  summarise(`mean hwy` = mean(hwy),
-          `min hwy` = min(hwy),
-          `max hwy` = max(hwy))
+  summarise(`média hwy` = mean(hwy),
+          `min. hwy` = min(hwy),
+          `max. hwy` = max(hwy))
 ```
 
 ## count()
@@ -195,8 +204,13 @@ dados %>%
 count(dados)
 
 dados %>% 
-  group_by(model) %>%
+  group_by(manufacturer) %>%
   count()
+
+# Equivalente com o código anterior
+dados %>% 
+  group_by(manufacturer) %>%
+  summarise(cars = n())
 ```
 
 ## sample_n() 
