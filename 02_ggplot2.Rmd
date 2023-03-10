@@ -86,6 +86,25 @@ ggplot(dados, aes(x = cty, y = hwy, col = factor(year))) +
   geom_point() + 
   labs(col = "year")
 
+# Alternativa
+ggplot(dados, aes(x = cty, y = hwy, col = factor(class))) + 
+  geom_point() + 
+  labs(col = "class")+
+  scale_color_brewer(type = "qual")
+
+ggplot(dados, aes(x = cty, y = hwy, col = factor(class))) + 
+  geom_point() + 
+  labs(col = "class")+
+  scale_color_brewer(type = "div")
+
+ggplot(dados, aes(x = cty, y = hwy, col = factor(class))) + 
+  geom_point() + 
+  labs(col = "class")+
+  scale_color_brewer(palette = "Set1", name = "Tipo de carro")+
+  scale_y_continuous(breaks = seq(10,60,3))+
+  scale_x_continuous(breaks = seq(10,40,3))+
+  theme_minimal()
+
 ggplot(dados, aes(x = cty, y = hwy, alpha = factor(year))) + 
   geom_point() + 
   labs(alpha = "year")
@@ -114,16 +133,23 @@ ggplot(dados, aes(x = cty, y = hwy, shape = factor(year))) +
   geom_point(col = "red") + 
   labs(shape = "year")
 
-
-ggplot(dados, aes(x = cty, y = hwy, size = factor(class))) + 
+ggplot(dados, aes(x = cty, y = hwy, size = class)) + 
   geom_point() + 
-  labs(size = "year")
+  labs(size = "class")
 
-ggplot(dados, aes(x = cty, y = hwy, size = factor(class), col = factor(class))) + 
+ggplot(dados, aes(x = cty, y = hwy, 
+                  size = class, 
+                  col = class)) + 
   geom_point() + 
-  labs(size = "year", 
-       col = "class")
+  guides(colour = guide_legend("Tipo de carro (color)"),
+         size = guide_legend("Tipo de carro (size)"))
 
+ggplot(dados, aes(x = cty, y = hwy, 
+                  size = class, 
+                  col = class)) + 
+  geom_point() + 
+  labs(col = "Tipo de Carro", size = "Tipo de Carro")+
+  guides(col = "legend")
 ```
 
 ## smooth, boxplot, histogram
@@ -233,7 +259,9 @@ v8
     select(manufacturer, hwy, year) %>% 
     filter(manufacturer == "audi", year == "1999") %>% 
     summarise(media = max(hwy))
- 
+```
+
+```{r, eval=FALSE}
 ggplotly(
 ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
   geom_col(position = "dodge") + 
@@ -243,7 +271,9 @@ ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) +
 dados %>% select(manufacturer, hwy, year) %>% 
   group_by(manufacturer, year) %>% 
   summarise(media = mean(hwy))
+```
 
+```{r}
 # Para pensar
 
 (dados_trat <- data.frame(tratamento = LETTERS[1:3], 
@@ -276,8 +306,12 @@ p1 + facet_grid(~cyl)
 p1 + facet_grid(rows = vars(year), cols =vars(cyl))
 p1 + facet_grid(year~cyl)
 
-p1 + facet_wrap(year~cyl)
-p1 + facet_wrap(year~cyl, ncol = 4)
+p1 + facet_wrap(year ~ cyl)
+p1 + facet_wrap(cyl ~ year)
+p1 + facet_wrap(~cyl + year)
+p1 + facet_wrap(~year + cyl)
+p1 + facet_wrap(year ~ cyl, ncol = 4)
+p1 + facet_wrap(cyl ~ year, ncol = 4)
 ```
 
 
