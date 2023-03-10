@@ -4,9 +4,11 @@ carrega-pacotes-a-serem-usados
 descrição-dos-dados-mpg
 propaganda-1-gustavo-jun-yakushiji
 propaganda-2-gustavo-jun-yakushiji
+propaganda-3
 dplyr-60-minutos
+lista-de-funções-do-pacote-dplyr
 operador-pipe
-select-para-linhas
+select-para-colunas
 rename
 mutate-para-colunas
 transmute
@@ -20,6 +22,7 @@ count
 sample_n
 sample_frac
 ggplot2-60-minutos
+lista-de-funções-do-pacote-ggplot2
 primeiros-passos-usando-geom_point
 mais-detalhes-sobre-geom_point
 smooth-boxplot-histogram
@@ -29,9 +32,11 @@ facet_grid-facet_grid
 stat_function
 stat_summary
 theme_
+gráfico-de-perfis-spaguetti-plot
 plotly
 esquisse
 exemplo-esquisse
 referências-on-line
-ggplot2-e-dplyr
-link-do-dplyr-ggplot2-e-magrittr
+livros
+tidyverse-links-do-dplyr-ggplot2-e-magrittr
+cheat-sheet
