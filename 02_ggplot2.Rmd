@@ -183,7 +183,6 @@ ggplot(dados, aes(x = drv, y = cty, col = drv)) +
   geom_boxplot()+
   theme_bw()+
   theme(legend.position = "none")
-  
 ```
 
 ## gridExtra e patchwork
@@ -203,7 +202,6 @@ grid.arrange(v1, v2, v3, v4)
 v1 + v2
 v1 | v2
 v1 / v2
-
 
 v1 + v2 + v3
 v1 + (v2 + v3)
@@ -262,6 +260,7 @@ v8
 ```
 
 ```{r, eval=FALSE}
+# plotly
 ggplotly(
 ggplot(dados, aes(x = manufacturer, y = hwy, fill = factor(year))) + 
   geom_col(position = "dodge") + 
@@ -293,7 +292,7 @@ dados %>% select(manufacturer, hwy, year) %>%
 
 ```
 
-## facet_grid, facet_grid
+## facet_grid, facet_wrap
 
 ```{r}
 p1<- ggplot(dados, aes(x = cty, y = hwy)) +
@@ -401,6 +400,16 @@ esquisser(dados)
 ```
 
 ## Exemplo esquisse
+
+```{r}
+ggplot(dados) +
+  aes(x = displ, y = hwy, colour = drv) +
+  geom_point(shape = "circle", size = 1.85) +
+  scale_color_hue(direction = 1) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
 
 ```{r}
 ggplot(dados) +
