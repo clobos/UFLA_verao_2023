@@ -28,7 +28,7 @@ mais-detalhes-sobre-geom_point
 smooth-boxplot-histogram
 gridextra-e-patchwork
 bar-col-density-density2d
-facet_grid-facet_grid
+facet_grid-facet_wrap
 stat_function
 stat_summary
 theme_
