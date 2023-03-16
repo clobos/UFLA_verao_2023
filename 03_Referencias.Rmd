@@ -1,0 +1,26 @@
+#  Referências (on-line)
+
+
+## Livros
+
+[ggplot2: elegant graphics for data analysis,  Hadley Wickham](https://ggplot2-book.org/)
+
+[R Programming for Data Science, Roger D. Peng](https://bookdown.org/rdpeng/rprogdatascience/)
+
+[R for Data Science, Hadley Wickham e Garrett Grolemund.](https://r4ds.had.co.nz/)
+
+[R Graphics Cookbook, Winston Chang](https://r-graphics.org/)
+
+## Tidyverse: links do dplyr, ggplot2 e magrittr 
+
+[dplyr do tidyverse](https://dplyr.tidyverse.org/)
+
+[ggplot2 do tidyverse](https://ggplot2.tidyverse.org/)
+
+[magrittr do tidyverse?](https://magrittr.tidyverse.org/)
+
+## cheat sheet
+
+[Data transformation with dplyr](https://github.com/rstudio/cheatsheets/raw/main/data-transformation.pdf)
+
+[Data visualization with ggplot2](https://github.com/rstudio/cheatsheets/raw/main/data-visualization-2.1.pdf)

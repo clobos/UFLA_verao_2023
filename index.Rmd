@@ -1,0 +1,121 @@
+--- 
+lang: "pt-br"
+title: "Um breve tutorial sobre dplyr com ggplot2"
+author:
+  - name: "Cristian Villegas (clobos@usp.br)"
+    url: https://github.com/clobos/
+    affiliation: Universidade de São Paulo, Escola Superior de Agricultura "Luiz de Queiroz"
+    affiliation_url: http://www.lce.esalq.usp.br/equipe/docentes
+date: "10/03/2023"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+description: |
+  Dizer alguma coisa
+link-citations: yes
+github-repo: clobos/UFLA_verao_2023/
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+
+# Introdução
+
+Palestra do *XIV Programa de Verão DES-ICET/UFLA - 2023*
+
+## Alguns atalhos no Rstudio
+
+Para considerar
+
+  > Operador Pipe (%>%): Ctrl + Shift + M (Windows) ou Cmd + Shift + M (Mac).
+
+  > Criar novos chunks: Ctrl + Alt + I (Windows) ou Cmd + Option + I (Mac).
+  
+## Carrega pacotes a serem usados
+
+```{r}
+#install.packages("tidyverse") 
+#install.packages("dplyr")     
+#install.packages("tidyr")     
+#install.packages("ggplot2")   
+
+# Manipulação de dados
+library(dplyr)
+
+# Visualização de gráficos
+library(ggplot2)
+library(gridExtra)
+library(patchwork)
+library(plotly)
+library(esquisse)
+
+# Para dados gráfico de perfis
+library(nlme)
+```
+
+
+
+## Descrição dos dados `mpg` 
+
+Dados de economia de combustível de 1999 a 2008 para *38 modelos populares de carros*. Este conjunto de dados contém um subconjunto dos dados de economia de combustível que a EPA disponibiliza em *https://fueleconomy.gov/*. Ele contém apenas modelos que tiveram um novo lançamento a cada ano entre 1999 e 2008 - isso foi usado como um substituto para a popularidade do carro. Um *data frame* com 234 linhas e 11 variáveis:
+
+  - *manufacturer* nome do fabricante 
+
+  - *model* nome do modelo
+
+  - *displ* cilindrada do motor, em litros
+
+  - *year* ano de fabricação
+
+  - *cyl* número de cilindros
+
+  - *trans* tipo de transmissão
+
+  - *drv* o tipo de trem de força, onde **f = tração dianteira**, **r = tração traseira** e **4 = 4wd**
+
+  - *cty* milhas urbanas  por galão
+
+  - *hwy* milhas rodoviárias por galão
+
+  - *fl* tipo de combustível
+
+  - *class* "tipo" de carro
+  
+```{r}
+#help("mpg")
+dados <- mpg
+glimpse(dados)
+
+dados <- mutate(.data = dados, 
+                across(where(is.character), 
+                as.factor))
+#View(df) 
+glimpse(dados)
+```
+
+## Propaganda 1 (Gustavo Jun Yakushiji)
+
+Assistir os 3 vídeos do **Gustavo Jun Yakushiji**  e **Cristian Villegas** no *youtube*
+
+[Dia 1 Introdução à Ciência de Dados (Introdução ao R e importação de dados)](https://youtu.be/gf2-KtABk9c)
+
+[Dia 2 Introdução à Ciência de Dados (Introdução ao ggplot2)](https://youtu.be/qCuzyUr0HBk)
+
+[Dia 3 Introdução à Ciência de Dados (Introdução ao Tidyverse)](https://youtu.be/dCY005dgEVo)
+
+## Propaganda 2 (Gustavo Jun Yakushiji)
+
+[Introdução à Ciência de Dados em R, Gustavo Jun Yakushiji; Cristian Villegas](https://gustavojy.github.io/ApostilaCD-R/)
+
+
+## Propaganda 3 
+
+  > Como pegar o código fonte do meu github? [Link do meu github](https://github.com/clobos/UFLA_verao_2023)
+  
+  > Como pegar o arquivo PDF da apresentação? [link: Um breve tutorial sobre dplyr com ggplot2](https://clobos.github.io/UFLA_verao_2023/) ou [Arquivo PDF](https://clobos.github.io/UFLA_verao_2023/UFLA_verao_2023.pdf)
+  
+  
